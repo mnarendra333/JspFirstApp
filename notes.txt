@@ -1,0 +1,12 @@
+Initial setup ( 1 day )
+
+Registering the AFM Agent service with SSO. And store the details in AFM DB for further refernce. When container bootstraps, it need to check for this config and proceed further.(4 days)
+
+Implement LoginFilter at AFM to validate if the client is registered properly. Register the AFM service with SSO, incase of invalid client / no client.(4 days)
+
+
+Implement LoginFilter at AFM to validate the user session for bearer token and if exists validate with SSO service. If invalid, redirect to SSO challenge page. If valid will take the user inside application. Connsider the token timeout also.(3 days)
+
+Implement the callback URL part at AFM side. This callback URL will be called by SSO when user authenticates successfully with SSO using challenge page. authorization_code will be passed by SSO as input. Use this authorization_code to generate the access_token/bearer_token (for that user session) and store this access_token/bearer_token in the user session. (3 days)
+
+AFM existing APIs ???
